@@ -3,8 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Connect with SoundCloud</title>
-</head>
+    <script src="http://connect.soundcloud.com/sdk.js"></script>
+    
+    <script>
+    ;(function(window) {
+        // Soundcloud info
+        var SC_CLIENT_ID = '342b8a7af638944906dcdb46f9d56d98'
+            , SC_CLIENT_SECRET = '388892529fccafe829ff7428b7155d45'
+            , SC_REDIRECT_URI = 'http://sc-redirect.herokuapp.com/callback.html';
 
+        // curl "https://api.soundcloud.com/me.json?oauth_token=1-72562-5951057-e3737ab6b997b4ed"
+
+        // initialize client with app credentials
+        SC.initialize({
+          client_id: SC_CLIENT_ID
+          , redirect_uri: SC_REDIRECT_URI
+        });
+
+        // initiate auth popup
+        SC.connect(function() {
+          SC.get('/me', function(me) { 
+            console.log('Hello, ' + me.username); 
+          });
+        });
+    })(window);
+    </script>
+
+</head>
 <body>
     <h5>App running!</h5>
 </body>
