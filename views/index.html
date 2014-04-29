@@ -20,12 +20,17 @@
           , redirect_uri: SC_REDIRECT_URI
         });
 
+        console.log('before parent', window.parent)
+        console.log('before parent referrer', window.parent.referrer)
+
         // initiate auth popup
         SC.connect(function() {
           SC.get('/me', function(me) { 
             console.log('Hello, ' + me.username); 
           });
         });
+
+
     })(window);
     </script>
 
