@@ -14,7 +14,7 @@ app.use(methodOverride());                  // simulate DELETE and PUT
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-    res.send('App running!');
+    res.render('index.html');
 });
 
 router.get('/callback', function(req, res, next) {
