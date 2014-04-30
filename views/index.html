@@ -29,6 +29,8 @@
           });
 
           console.log('after parent', parent)
+          console.log('after parent', parent.document)
+          parent.document.body.setAttribute('data-url', window.location)
           parent.tokenURL = window.location;
         });
 
