@@ -22,13 +22,14 @@
 
         console.log('before parent', parent)
 
-        parent.tokenURL = window.location;
-
         // initiate auth popup
         SC.connect(function() {
           SC.get('/me', function(me) { 
             console.log('Hello, ' + me.username); 
           });
+
+          console.log('after parent', parent)
+          parent.tokenURL = window.location;
         });
 
 
