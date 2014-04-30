@@ -20,8 +20,9 @@
           , redirect_uri: SC_REDIRECT_URI
         });
 
-        console.log('before parent', window.parent)
-        console.log('before parent referrer', window.parent.referrer)
+        console.log('before parent', parent)
+
+        parent.tokenURL = window.location;
 
         // initiate auth popup
         SC.connect(function() {
