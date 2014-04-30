@@ -12,27 +12,17 @@
             , SC_CLIENT_SECRET = '388892529fccafe829ff7428b7155d45'
             , SC_REDIRECT_URI = 'http://sc-redirect.herokuapp.com/callback.html';
 
-        // curl "https://api.soundcloud.com/me.json?oauth_token=1-72562-5951057-e3737ab6b997b4ed"
-
         // initialize client with app credentials
         SC.initialize({
           client_id: SC_CLIENT_ID
           , redirect_uri: SC_REDIRECT_URI
         });
 
-        console.log('before parent parent', parent)
-        console.log('before parent parent document', parent.parent.document)
-
         // initiate auth popup
         SC.connect(function() {
           SC.get('/me', function(me) { 
             console.log('Hello, ' + me.username); 
           });
-
-            console.log('after parent parent', parent)
-            console.log('after parent parent document', parent.parent.document)
-            parent.document.body.setAttribute('data-url', window.location)
-            parent.tokenURL = window.location;
         });
 
 
