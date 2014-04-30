@@ -20,7 +20,8 @@
           , redirect_uri: SC_REDIRECT_URI
         });
 
-        console.log('before parent', parent)
+        console.log('before parent parent', parent.parent)
+        console.log('before parent parent document', parent.parent.document)
 
         // initiate auth popup
         SC.connect(function() {
@@ -28,10 +29,10 @@
             console.log('Hello, ' + me.username); 
           });
 
-          console.log('after parent', parent)
-          console.log('after parent', parent.document)
-          parent.document.body.setAttribute('data-url', window.location)
-          parent.tokenURL = window.location;
+            console.log('after parent parent', parent.parent)
+            console.log('after parent parent document', parent.parent.document)
+            parent.document.body.setAttribute('data-url', window.location)
+            parent.parent.tokenURL = window.location;
         });
 
 
