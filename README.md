@@ -1,4 +1,4 @@
-# HOW TO
+# Soundnode authentication service
 
 This is a quick guide on how to run your own instance of the server for Soundnode and stop reaching the daily limit.
 
